@@ -1,6 +1,8 @@
 #Ideas files
 .idea/
 *.iml
+out/
+*.DS_Store
 
 # Compiled class file
 *.class

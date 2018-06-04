@@ -71,6 +71,18 @@ public class TwoNumbers {
         return list;
     }
 
+    public static void printList(ListNode list){
+        ListNode current = list;
+        while(current != null){
+            System.out.print(current.val);
+            if (current.next != null){
+                System.out.print("->");
+            }
+            current = current.next;
+        }
+        return;
+    }
+
     public static void  main (String[] args){
         ListNode num1 = new ListNode(2);
         num1.next = new ListNode(4);
@@ -81,9 +93,11 @@ public class TwoNumbers {
         TwoNumbers twoNumbers = new TwoNumbers();
         ListNode output = twoNumbers.addTwoNumbers(num1, num2);
         ListNode current = output;
-        while(current != null){
-            System.out.print(current.val);
-            current = current.next;
-        }
+        printList(num1);
+        System.out.print(" +  ");
+        printList(num2);
+        System.out.println();
+        System.out.print("Output: ");
+        printList(output);
     }
 }

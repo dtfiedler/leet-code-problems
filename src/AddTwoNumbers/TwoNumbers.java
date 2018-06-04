@@ -72,11 +72,11 @@ public class TwoNumbers {
     }
 
     public static void  main (String[] args){
-        ListNode num1 = new ListNode(3);
+        ListNode num1 = new ListNode(2);
         num1.next = new ListNode(4);
-        num1.next.next = new ListNode(5);
-        ListNode num2 = new ListNode(6);
-        num2.next = new ListNode(5);
+        num1.next.next = new ListNode(3);
+        ListNode num2 = new ListNode(5);
+        num2.next = new ListNode(6);
         num2.next.next = new ListNode(4);
         TwoNumbers twoNumbers = new TwoNumbers();
         ListNode output = twoNumbers.addTwoNumbers(num1, num2);

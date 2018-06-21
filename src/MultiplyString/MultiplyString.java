@@ -22,8 +22,8 @@ class MultiplyString {
         createHashMap();
         double int1 = getIntFromString(num1);
         double int2 = getIntFromString(num2);
-        double sum = int1 * int2;                        //note: floats can causes rounding errors, especially with large numbers
-        String output = String.format("%.0f", sum);   //convert to string with not decimals
+        double sum = int1 * int2;                       //note: floats can causes rounding errors, especially with large numbers
+        String output = String.format("%.0f", sum);     //convert to string with not decimals
         return output;
     }
 
@@ -35,11 +35,9 @@ class MultiplyString {
         for (int i = number.length() - 1; i >= 0; i--){
             //get number at index that matches that char, then multiply by 10^(index) to get it's value and add total
             sum += (numberMap.get(number.charAt(i)) * Math.pow(10, index));
-            //increment index as we go
-            index++;
+            index++;    //increment index as we go
         }
-        //return integer value
-        return sum;
+        return sum;     //return integer value
     }
 
     //helper function to create hashmap

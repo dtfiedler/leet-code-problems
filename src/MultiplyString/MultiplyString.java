@@ -4,12 +4,18 @@ import java.util.HashMap;
 import java.util.Map;
 
 class MultiplyString {
+
+    //Used to store mapping between integer equivalent of a number expressed as a char/string
     private static Map<Character, Integer> numberMap = new HashMap<>();
 
+    //example
     public static void main (String[] args){
         String num1 = "123";
+        System.out.println("num1 = " + num1);
         String num2 = "456";
+        System.out.println("num2 = " + num2);
         String sum = multiply(num1, num2);
+        System.out.println("Output = " + sum);
     }
 
     public static String multiply(String num1, String num2) {
@@ -22,16 +28,21 @@ class MultiplyString {
     }
 
 
+    //iterate through string (starting at end, to get double value represented as real number
     public static double getIntFromString(String number){
         double sum = 0;
         int index = 0;
         for (int i = number.length() - 1; i >= 0; i--){
+            //get number at index that matches that char, then multiply by 10^(index) to get it's value and add total
             sum += (numberMap.get(number.charAt(i)) * Math.pow(10, index));
+            //increment index as we go
             index++;
         }
+        //return integer value
         return sum;
     }
 
+    //helper function to create hashmap
     private static void createHashMap(){
         numberMap.put('0', 0);
         numberMap.put('1', 1);
